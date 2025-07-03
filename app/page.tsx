@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../components/ui/button";
 import CompanionCard from "../components/CompanionCard";
 import Cta from "@/components/CTA";
 import CompanionList from "../components/CompanionsList";
@@ -27,7 +26,7 @@ const Page = async () => {
         ))}
       </section>
 
-      <section className="home-section">
+      <section className="home-section mb-4">
         <CompanionList
           title="Recently completed sessions"
           companions={recentSessions}
@@ -35,7 +34,6 @@ const Page = async () => {
         />
         <Cta />
       </section>
-      <Button>Lets get started</Button>
     </main>
   );
 };

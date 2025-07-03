@@ -117,16 +117,14 @@ export const newCompanionPermissions = async () => {
   const supabase = createSupabaseClient();
 
   let limit = 0;
-  console.log(has({ feature: "10_companion_limit" }));
   if (has({ plan: "pro" })) {
-    console.log("pero no entra acá en pro?");
     return true;
   } else if (has({ feature: "3_companion_limit" })) {
     limit = 3;
   } else if (has({ feature: "10_companion_limit" })) {
     limit = 10;
   }
-  console.log("limit", limit);
+
   const { data, error } = await supabase
     .from("companions")
     .select("id", { count: "exact" })
